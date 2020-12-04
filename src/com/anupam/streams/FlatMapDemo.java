@@ -29,5 +29,9 @@ public class FlatMapDemo {
                 .count();
 
         System.out.println("Total = "+ total);
+
+        cities.stream()
+                .flatMap(city -> city.getPeople().stream())
+                .forEach(person -> System.out.println(person.toString()));
     }
 }
